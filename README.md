@@ -14,4 +14,6 @@ technisch:
 
 inhaltlich:
 
-Siehe Historischer Verein für Niederbayern e.V. IVHVN Band 140 (2014) MORITZ FISCHER "Eine größere Liebe hat niemand als der, der sein Leben hingibt ..." Die Freiheitsaktion Bayern in Landshut und der Mord an Franz Seiff 
+* Texte und Bilder: Siehe Historischer Verein für Niederbayern e.V. IVHVN Band 140 (2014) MORITZ FISCHER "Eine größere Liebe hat niemand als der, der sein Leben hingibt ..." Die Freiheitsaktion Bayern in Landshut und der Mord an Franz Seiff 
+
+* Video: Curtesy of Big Buck Bunny https://peach.blender.org/
