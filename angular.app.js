@@ -1,4 +1,4 @@
-angular.module('hypervideoApp', ['ngMap'])
+angular.module('hypervideoApp', [])
   .controller('TimingController', function($scope) {
     var objects = this;
     
@@ -7,14 +7,6 @@ angular.module('hypervideoApp', ['ngMap'])
     objects.charaktere = vDataCharaktere; // siehe annotations.js
     objects.currentCharakter = objects.charaktere[0];
     
-    objects.orte = vDataOrte; // siehe annotations.js
-    objects.currentOrt = objects.orte[0];
-	
-	objects.showCustomMarker = function(vMapsElement, vOrt) {
-		objects.currentOrt = vOrt;
-		objects.angulardocument.getElementById('aktuellerortbutton').click();
-	};
-    
     objects.zusatzinfos = vDataZusatzinfos; // siehe annotations.js
     objects.currentZusatzinfo = objects.zusatzinfos[0];
 	
@@ -22,7 +14,6 @@ angular.module('hypervideoApp', ['ngMap'])
     
     objects.checkTime = function(vSeconds) {
         checkTimeForObject(objects.charaktere, vSeconds);
-        checkTimeForObject(objects.orte, vSeconds);
         checkTimeForObject(objects.zusatzinfos, vSeconds);
     };
     
@@ -44,6 +35,31 @@ angular.module('hypervideoApp', ['ngMap'])
             objects.checkTime(aNewValue);
         }
     });
+	
+	$scope.gethtml = function(t) {
+		return "annotations/" + t.html;
+	}
+	
+	$scope.isFullscreen = function() {
+		var isFullscreen = document.fullscreenElement != null || document.webkitFullscreenElement != null || document.mozFullScreenElement != null || document.msFullscreenElement != null || document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+		
+		if (isFullscreen) { // Fullscreen-Hack fuer IE und Safari
+			document.getElementById("videosection").style.maxWidth = "none";
+		} else {
+			document.getElementById("videosection").style.maxWidth = "860px";
+		}
+		
+		return isFullscreen;
+	}
+	
+	$scope.isFullscreenForbidden = function() {
+		// return true bei iPhone Safari
+		if (/iP(ad|hone|od).+Version\/[\d\.]+.*Safari/i.test(navigator.userAgent)) {
+			return true;
+		}
+		
+		return false;
+	}
 
   })
   .directive('docs', function () {
