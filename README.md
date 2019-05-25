@@ -10,3 +10,5 @@ Das Projekt verwendet:
 * Material design icons Apache License Version 2.0, https://github.com/google/material-design-icons
 * Roboto Font Apache License Version 2.0, https://github.com/google/roboto/
 * SVG-Loaders MIT License, (c) 2014 Sam Herbert, https://github.com/SamHerbert/SVG-Loaders
+
+Demo: https://1iedler.github.io/hypervideo/
